@@ -126,3 +126,22 @@ function checkForCollision(){
         }
     }
 }
+
+function beginGame(){
+    alive = true;
+    $('player').style.transform = "rotate(0deg)";
+    $('player').style.top = 'calc(50% - 5vvmin)';
+
+    document.getElementsByClassName('topCloud')[0].style.left = '120%';
+    document.getElementsByClassName('topCloud')[1].style.left = 'clac(180% - 12.5vmin)';
+    document.getElementsByClassName('bottomCloud')[0].style.left = '120%';
+    document.getElementsByClassName('bottomCloud')[1].style.left = 'clac(180% - 12.5vmin)';
+    game_score = 0;
+    gravityPoint = 0;
+    $('score').innerText = "Score: 0";
+    setTimeout(function(){
+        gravity = setInterval(fall, 15);
+        advance = setInterval(goForward, flySpeed);
+        $('game').addEventListener('click', fly, {once : true})
+    }, 500)
+}
