@@ -53,6 +53,15 @@ body{
     background: linear-gradient(135deg, darkgreen, #070);
 }
 
+#score{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    z-index: 2;
+}
+
 #playText{
     position: fixed;
     left: 50%;
