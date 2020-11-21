@@ -52,3 +52,14 @@ body{
     height: 2em;
     background: linear-gradient(135deg, darkgreen, #070);
 }
+
+#playText{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 115%;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    z-index: 3;
+}
