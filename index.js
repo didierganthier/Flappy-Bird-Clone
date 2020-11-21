@@ -63,6 +63,18 @@ function fall(){
     $('player').style.top = $('player').offsetTop + 1 + gravityPoint/9.81 + 'px';
     $('player').style.transform = 'rotate(15deg)';
     gravityPoint++;
-    
+    checkBorders_replay();
+}
+
+function checkBorders_replay(){
+    if($('player').offsetTop < 0){
+        $('game').removeEventListener('click', fly);
+    }
+    if($('player').offsetTop + $('player').offsetHeight > window.innerHeight){
+        clearInterval(gravity);
+        clearInterval(advance);
+        $('game').removeEventListener('click', fly);
+        replay_button();
+    }
 }
 
