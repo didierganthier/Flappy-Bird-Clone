@@ -31,3 +31,22 @@ function fly(){
         }, 500)
     }
 }
+
+function createPlayer_and_score(){
+    //Player
+    let player = document.createElement('div');
+    player.id = 'player';
+    $('game').appendChild(player);
+
+    //Score
+    let score = document.createElement('div');
+    player.id = 'score';
+    $('game').appendChild(score);
+    $('score').innerText = `Score ${game_score}`
+
+    //Tap to play
+    let play = document.createElement('div');
+    play.id = 'playText';
+    $('game').appendChild(play);
+    $('playText').innerText = 'Tap to Play';
+}
