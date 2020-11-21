@@ -40,7 +40,7 @@ function createPlayer_and_score(){
 
     //Score
     let score = document.createElement('div');
-    player.id = 'score';
+    score.id = 'score';
     $('game').appendChild(score);
     $('score').innerText = `Score ${game_score}`
 
@@ -53,5 +53,16 @@ function createPlayer_and_score(){
 
 function write_score(){
     $('score').innerText = `Score: ${++ game_score}`;
+}
+
+window.onload = function(){
+    createPlayer_and_score();
+}
+
+function fall(){
+    $('player').style.top = $('player').offsetTop + 1 + gravityPoint/9.81 + 'px';
+    $('player').style.transform = 'rotate(15deg)';
+    gravityPoint++;
+    
 }
 
