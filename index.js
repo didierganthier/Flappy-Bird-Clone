@@ -58,7 +58,7 @@ function write_score(){
 window.onload = function(){
     createPlayer_and_score();
     createClouds();
-    createClouds('calc(180% + 12.5vmin');
+    createClouds('calc(180% + 12.5vmin)');
     $('game').addEventListener('click', beginGame, {once : true});
 }
 
@@ -136,6 +136,7 @@ function beginGame(){
     document.getElementsByClassName('topCloud')[1].style.left = 'clac(180% - 12.5vmin)';
     document.getElementsByClassName('bottomCloud')[0].style.left = '120%';
     document.getElementsByClassName('bottomCloud')[1].style.left = 'clac(180% - 12.5vmin)';
+    $('playText').style.display = 'none';
     game_score = 0;
     gravityPoint = 0;
     $('score').innerText = "Score: 0";
