@@ -100,3 +100,18 @@ function createClouds(x = '120%'){
     topCloud.style.height = randTop + 'vh';
     bottomCloud.style.height = 100 - 30 - randTop + 'vh';
 }
+
+function goForward(){
+    for(let i = 0; i < document.getElementsByClassName('topCloud').length; i++){
+        document.getElementsByClassName('topCloud')[i].style.left = (document.getElementsByClassName('topCloud')[i].offsetLeft - 1) + 'px';
+        document.getElementsByClassName('bottomCloud')[i].style.left = (document.getElementsByClassName('bottomCloud')[i].offsetLeft - 1) + 'px';
+    }
+
+    if(document.getElementsByClassName("topCloud")[0].offsetLeft < -document.getElementsByClassName('topCloud')[0].offsetWidth){
+        document.getElementsByClassName("topCloud")[0].remove();
+        document.getElementsByClassName("bottomCloud")[0].remove();
+        createClouds();
+        write_score();
+    }
+    checkForCollision();
+}
