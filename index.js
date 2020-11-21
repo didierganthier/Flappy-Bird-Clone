@@ -130,7 +130,7 @@ function checkForCollision(){
 function beginGame(){
     alive = true;
     $('player').style.transform = "rotate(0deg)";
-    $('player').style.top = 'calc(50% - 5vvmin)';
+    $('player').style.top = 'calc(50% - 5vmin)';
 
     document.getElementsByClassName('topCloud')[0].style.left = '120%';
     document.getElementsByClassName('topCloud')[1].style.left = 'clac(180% - 12.5vmin)';
