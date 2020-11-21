@@ -115,3 +115,14 @@ function goForward(){
     }
     checkForCollision();
 }
+
+function checkForCollision(){
+    if($('player').offsetLeft + $('player').offsetWidth > document.getElementsByClassName('topCloud')[0].offsetLeft || $('player').offsetLeft > document.getElementsByClassName('topCloud')[0].offsetLeft){
+        if(($('player').offsetTop < document.getElementsByClassName('topCloud')[0].offsetTop + document.getElementsByClassName('topCloud').offsetHeight) || ($('player').offsetTop + $('player').offsetHeight > document.getElementsByClassName("bottomCloud")[0].offsetTop)){
+            $('game').removeEventListener('click', fly);
+            clearInterval(advance);
+            gravityPoint = 3;
+            alive = false;
+        }
+    }
+}
