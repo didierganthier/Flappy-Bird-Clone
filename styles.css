@@ -12,3 +12,17 @@ body{
 
     background: url(https://imgur.com/19GPbJd.jpg);
 }
+
+#player{
+    position: fixed;
+    width: 10vmin;
+    height: 8vmin;
+    top: calc(50% - 5vmin);
+    left: 1em;
+
+    background: url("https://imgur.com/vcK646j.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    transition: transform 0.5s;
+}
