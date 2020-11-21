@@ -50,3 +50,8 @@ function createPlayer_and_score(){
     $('game').appendChild(play);
     $('playText').innerText = 'Tap to Play';
 }
+
+function write_score(){
+    $('score').innerText = `Score: ${++ game_score}`;
+}
+
