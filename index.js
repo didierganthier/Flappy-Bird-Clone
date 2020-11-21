@@ -78,3 +78,8 @@ function checkBorders_replay(){
     }
 }
 
+function replay_button(){
+    $("playText").innerText = "Tap to Replay";
+    $("playText").style.display = 'block';
+    $('game').addEventListener('click', beginGame, {once : true})
+}
