@@ -57,6 +57,9 @@ function write_score(){
 
 window.onload = function(){
     createPlayer_and_score();
+    createClouds();
+    createClouds('calc(180% + 12.5vmin');
+    $('game').addEventListener('click', beginGame, {once : true});
 }
 
 function fall(){
@@ -82,4 +85,18 @@ function replay_button(){
     $("playText").innerText = "Tap to Replay";
     $("playText").style.display = 'block';
     $('game').addEventListener('click', beginGame, {once : true})
+}
+
+function createClouds(x = '120%'){
+    let topCloud = document.createElement('div');
+    let bottomCloud = document.createElement('div');
+    $('game').appendChild(topCloud);
+    $('game').appendChild(bottomCloud);
+    topCloud.classList = "topCloud";
+    bottomCloud.classList = 'bottomCloud';
+    topCloud.style.left = x;
+    bottomCloud.style.left = x;
+    let randTop = Math.floor(Math.random() * 70);
+    topCloud.style.height = randTop + 'vh';
+    bottomCloud.style.height = 100 - 30 - randTop + 'vh';
 }
